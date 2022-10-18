@@ -97,9 +97,9 @@
         <field name="code">bono</field>
     </record>
 
-    <record id="hr_payroll_categories_dotacion" model="hr.salary.rule.category">
-        <field name="name">Dotacion</field>
-        <field name="code">dotacion</field>
+    <record id="hr_payroll_categories_pagoterc" model="hr.salary.rule.category">
+        <field name="name">Pago Terceros</field>
+        <field name="code">pagterc</field>
     </record>
 
     <record id="hr_payroll_categories_comisiones" model="hr.salary.rule.category">
@@ -241,7 +241,6 @@
 
     <record id="hr_rule_base_salario" model="hr.salary.rule">
         <field name="name">Base Salario</field>
-        <field name="active">False</field>
         <field name="sequence" eval="10"/>
         <field name="code">1501</field>
         <field name="category_id" ref="hr_payroll_categories_bases1"/>
@@ -255,7 +254,6 @@
 
     <record id="hr_rule_base_sub_transporte" model="hr.salary.rule">
         <field name="name">Base Subsidio de transporte</field>
-        <field name="active">False</field>
         <field name="sequence" eval="15"/>
         <field name="code">1502</field>
         <field name="rule_type">none</field>
@@ -269,7 +267,6 @@
 
     <record id="hr_rule_base_variable" model="hr.salary.rule">
         <field name="name">Base Variable</field>
-        <field name="active">False</field>
         <field name="sequence" eval="20"/>
         <field name="code">1503</field>
         <field name="rule_type">none</field>
@@ -283,7 +280,6 @@
 
     <record id="hr_rule_base_horas_extra" model="hr.salary.rule">
         <field name="name">Promedio de horas extras</field>
-        <field name="active">False</field>
         <field name="sequence" eval="25"/>
         <field name="code">1504</field>
         <field name="rule_type">none</field>
@@ -299,7 +295,6 @@ for slip in employee.slip_ids:
 
     <record id="hr_rule_base_prima" model="hr.salary.rule">
         <field name="name">Base para Prima</field>
-        <field name="active">False</field>
         <field name="sequence" eval="30"/>
         <field name="code">1505</field>
         <field name="rule_type">none</field>
@@ -313,7 +308,6 @@ for slip in employee.slip_ids:
 
     <record id="hr_rule_base_cesan" model="hr.salary.rule">
         <field name="name">Base para Cesantias</field>
-        <field name="active">False</field>
         <field name="sequence" eval="35"/>
         <field name="code">1506</field>
         <field name="rule_type">none</field>
@@ -327,7 +321,6 @@ for slip in employee.slip_ids:
 
     <record id="hr_rule_base_vacac" model="hr.salary.rule">
         <field name="name">Base para Vacaciones</field>
-        <field name="active">False</field>
         <field name="sequence" eval="40"/>
         <field name="code">1507</field>
         <field name="rule_type">none</field>
@@ -340,7 +333,6 @@ for slip in employee.slip_ids:
     </record>
 
         <record id="hr_rule_Prima_de_ser_2" model="hr.salary.rule">
-            <field name="active">False</field>
             <field name="name">Prima De Servicio.</field>
             <field name="sequence" eval="45"/>
             <field name="code">1508</field>
@@ -361,7 +353,7 @@ for slip in employee.slip_ids:
         <field name="sequence" eval="706"/>
         <field name="code">1119</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_261005"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_261005"/>
         <field name="category_id" ref="hr_payroll_categories_cesan"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.date_to.day > 15 and payslip.date_to.month == 12 or payslip.is_liquid:
@@ -375,7 +367,7 @@ for slip in employee.slip_ids:
         <field name="sequence" eval="706"/>
         <field name="code">1219</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_261005"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_261005"/>
         <field name="category_id" ref="hr_payroll_categories_cesan"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.date_to.day > 15 and payslip.date_to.month == 12 or payslip.is_liquid:
@@ -389,7 +381,7 @@ for slip in employee.slip_ids:
         <field name="sequence" eval="706"/>
         <field name="code">1319</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_261005"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_261005"/>
         <field name="category_id" ref="hr_payroll_categories_cesan"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.date_to.day > 15 and payslip.date_to.month == 12 or payslip.is_liquid:
@@ -403,8 +395,8 @@ for slip in employee.slip_ids:
         <field name="sequence" eval="707"/>
         <field name="code">1120</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510533"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_261010"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510533"/>
+        <field name="account_credit" ref="l10n_co.co_puc_261010"/>
         <field name="category_id" ref="hr_payroll_categories_incesan"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.date_to.day > 15 and payslip.date_to.month == 12 or payslip.is_liquid:
@@ -418,8 +410,8 @@ for slip in employee.slip_ids:
         <field name="sequence" eval="707"/>
         <field name="code">1220</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520533"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_261010"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520533"/>
+        <field name="account_credit" ref="l10n_co.co_puc_261010"/>
         <field name="category_id" ref="hr_payroll_categories_incesan"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.date_to.day > 15 and payslip.date_to.month == 12 or payslip.is_liquid:
@@ -433,8 +425,8 @@ for slip in employee.slip_ids:
         <field name="sequence" eval="707"/>
         <field name="code">1320</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720533"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_261010"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720533"/>
+        <field name="account_credit" ref="l10n_co.co_puc_261010"/>
         <field name="category_id" ref="hr_payroll_categories_incesan"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.date_to.day > 15 and payslip.date_to.month == 12 or payslip.is_liquid:
@@ -449,8 +441,8 @@ for slip in employee.slip_ids:
         <field name="code">1116</field>
         <field name="rule_type">devengos</field>
         <field name="category_id" ref="hr_payroll_categories_vac"/>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510539"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_261015"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510539"/>
+        <field name="account_credit" ref="l10n_co.co_puc_261015"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.is_liquid:
     result = True
@@ -461,7 +453,7 @@ else:
         if i.code == "VACACIONES DE DISFRUTE":
             result = True</field>
         <field name="amount_select">code</field>
-        <field name="amount_python_compute">result= round(contract.calculate_vacations_dis(payslip)) + categories.pro_vac</field>
+        <field name="amount_python_compute">result= round(contract.calculate_vacations_dis(payslip))</field>
     </record>
 
     <record id="hr_rule_vac_ven" model="hr.salary.rule">
@@ -470,7 +462,7 @@ else:
         <field name="code">1216</field>
         <field name="rule_type">devengos</field>
         <field name="category_id" ref="hr_payroll_categories_vac"/>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520539"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520539"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.is_liquid:
     result = True
@@ -488,7 +480,7 @@ else:
         <field name="code">1316</field>
         <field name="rule_type">devengos</field>
         <field name="category_id" ref="hr_payroll_categories_vac"/>
-        <!--field name="account_debit" ref="account_extra.co_puc_720539"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720539"/>
         <field name="condition_select">python</field>
         <field name="condition_python">if payslip.is_liquid:
     result = True
@@ -519,21 +511,15 @@ else:
             <field name="sequence" eval="100"/>
             <field name="code">1100</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510506"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510506"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_SUELDO"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.WORK100</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
     if  worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
-        flag_sunday = False
-        for sunday in payslip.leaves_ids:
-            if sunday.include_sunday and not flag_sunday:
-                flag_sunday = True
-                x=worked_days.WORK100.number_of_days
-            else:
-                x=worked_days.WORK100.number_of_days-1
+        x=worked_days.WORK100.number_of_days-1
         result = round((contract.wage / 30) * x)
 else:
     result = round((contract.wage / 30) * (worked_days.WORK100 and worked_days.WORK100.number_of_days))</field>
@@ -544,21 +530,15 @@ else:
             <field name="sequence" eval="100"/>
             <field name="code">1200</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520506"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520506"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_SUELDO"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.WORK100</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
     if  worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
-        flag_sunday = False
-        for sunday in payslip.leaves_ids:
-            if sunday.include_sunday and not flag_sunday:
-                flag_sunday = True
-                x=worked_days.WORK100.number_of_days
-            elif not flag_sunday:
-                x=worked_days.WORK100.number_of_days-1
+        x=worked_days.WORK100.number_of_days-1
         result = round((contract.wage / 30) * x)
 else:
     result = round((contract.wage / 30) * (worked_days.WORK100 and worked_days.WORK100.number_of_days))</field>
@@ -570,20 +550,15 @@ else:
             <field name="sequence" eval="100"/>
             <field name="code">1300</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720506"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720506"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_SUELDO"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.WORK100</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
     if  worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
-        flag_sunday = False
-        for sunday in payslip.leaves_ids:
-            if sunday.include_sunday:
-                x=worked_days.WORK100.number_of_days
-            else:
-                x=worked_days.WORK100.number_of_days-1
+        x=worked_days.WORK100.number_of_days-1
         result = round((contract.wage / 30) * x)
 else:
     result = round((contract.wage / 30) * (worked_days.WORK100 and worked_days.WORK100.number_of_days))</field>
@@ -594,8 +569,8 @@ else:
         <field name="sequence" eval="195"/>
         <field name="code">1121-3</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_bon"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.PagoAlimentacionS and inputs.PagoAlimentacionS.amount or False</field>
@@ -608,8 +583,8 @@ else:
         <field name="sequence" eval="195"/>
         <field name="code">1221-3</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_bon"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.PagoAlimentacionS and inputs.PagoAlimentacionS.amount or False</field>
@@ -622,8 +597,8 @@ else:
         <field name="sequence" eval="195"/>
         <field name="code">1321-3</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_bon"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.PagoAlimentacionS and inputs.PagoAlimentacionS.amount or False</field>
@@ -636,8 +611,8 @@ else:
         <field name="sequence" eval="196"/>
         <field name="code">1121-4</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_bon"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.PagoAlimentacionNS and inputs.PagoAlimentacionNS.amount or False</field>
@@ -650,8 +625,8 @@ else:
         <field name="sequence" eval="196"/>
         <field name="code">1221-4</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_bon"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.PagoAlimentacionNS and inputs.PagoAlimentacionNS.amount or False</field>
@@ -664,8 +639,8 @@ else:
         <field name="sequence" eval="196"/>
         <field name="code">1321-4</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_bon"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.PagoAlimentacionNS and inputs.PagoAlimentacionNS.amount or False</field>
@@ -678,7 +653,7 @@ else:
         <field name="sequence" eval="192"/>
         <field name="code">1101</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510506"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510506"/>
         <field name="category_id" ref="hr_payroll_ajs"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.Ajs and inputs.Ajs.amount or False</field>
@@ -691,7 +666,7 @@ else:
         <field name="sequence" eval="192"/>
         <field name="code">1201</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520506"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520506"/>
         <field name="category_id" ref="hr_payroll_ajs"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.Ajs and inputs.Ajs.amount or False</field>
@@ -704,7 +679,7 @@ else:
         <field name="sequence" eval="192"/>
         <field name="code">1301</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720506"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720506"/>
         <field name="category_id" ref="hr_payroll_ajs"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.Ajs and inputs.Ajs.amount or False</field>
@@ -717,8 +692,8 @@ else:
             <field name="sequence" eval="303"/>
             <field name="code">1102-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510548"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510548"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.BONO and inputs.BONO.amount or False</field>
@@ -726,55 +701,13 @@ else:
             <field name="amount_python_compute">result=inputs.BONO.amount</field>
         </record>
 
-    <record id="hr_rule_dotacion" model="hr.salary.rule">
-        <field name="name">Dotación</field>
-        <field name="sequence" eval="195"/>
-        <field name="code">1160</field>
-        <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
-        <field name="category_id" ref="hr_payroll_categories_dotacion"/>
-        <field name="condition_select">python</field>
-        <field name="condition_python">result = inputs.Dotacion and inputs.Dotacion.amount or False</field>
-        <field name="amount_select">code</field>
-        <field name="amount_python_compute">result = inputs.Dotacion.amount</field>
-    </record>
-
-    <record id="hr_rule_dotacion_12" model="hr.salary.rule">
-        <field name="name">Dotación</field>
-        <field name="sequence" eval="195"/>
-        <field name="code">1260</field>
-        <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
-        <field name="category_id" ref="hr_payroll_categories_dotacion"/>
-        <field name="condition_select">python</field>
-        <field name="condition_python">result = inputs.Dotacion and inputs.Dotacion.amount or False</field>
-        <field name="amount_select">code</field>
-        <field name="amount_python_compute">result = inputs.Dotacion.amount</field>
-    </record>
-
-    <record id="hr_rule_dotacion_13" model="hr.salary.rule">
-        <field name="name">Dotación</field>
-        <field name="sequence" eval="195"/>
-        <field name="code">1360</field>
-        <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
-        <field name="category_id" ref="hr_payroll_categories_dotacion"/>
-        <field name="condition_select">python</field>
-        <field name="condition_python">result = inputs.Dotacion and inputs.Dotacion.amount or False</field>
-        <field name="amount_select">code</field>
-        <field name="amount_python_compute">result = inputs.Dotacion.amount</field>
-    </record>
-
 <record id="hr_rule_bon_ven" model="hr.salary.rule">
             <field name="name">Bonificacion Salarial</field>
             <field name="sequence" eval="303"/>
             <field name="code">1202-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520548"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520548"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.BONO and inputs.BONO.amount or False</field>
@@ -787,8 +720,8 @@ else:
             <field name="sequence" eval="303"/>
             <field name="code">1302-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720548"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720548"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.BONO and inputs.BONO.amount or False</field>
@@ -801,8 +734,8 @@ else:
             <field name="sequence" eval="303"/>
             <field name="code">1102-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510548"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510548"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.BONO_NS and inputs.BONO_NS.amount or False</field>
@@ -815,8 +748,8 @@ else:
             <field name="sequence" eval="303"/>
             <field name="code">1202-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520548"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520548"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.BONO_NS and inputs.BONO_NS.amount or False</field>
@@ -829,8 +762,8 @@ else:
             <field name="sequence" eval="303"/>
             <field name="code">1302-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720548"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720548"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.BONO_NS and inputs.BONO_NS.amount or False</field>
@@ -843,8 +776,8 @@ else:
         <field name="sequence" eval="301"/>
         <field name="code">1103-1</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_rod"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.ViaticoManuAlojS and inputs.ViaticoManuAlojS.amount or False</field>
@@ -856,8 +789,8 @@ else:
         <field name="name">Viaticos Salarial</field>
         <field name="sequence" eval="301"/>
         <field name="code">1203-1</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_rod"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.ViaticoManuAlojS and inputs.ViaticoManuAlojS.amount or False</field>
@@ -870,8 +803,8 @@ else:
         <field name="sequence" eval="301"/>
         <field name="code">1303-1</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_rod"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.ViaticoManuAlojS and inputs.ViaticoManuAlojS.amount or False</field>
@@ -884,8 +817,8 @@ else:
         <field name="sequence" eval="302"/>
         <field name="code">1103-2</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_rod"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.ViaticoManuAlojNS and inputs.ViaticoManuAlojNS.amount or False</field>
@@ -897,8 +830,8 @@ else:
         <field name="name">Viaticos No Salarial</field>
         <field name="sequence" eval="302"/>
         <field name="code">1203-2</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_rod"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.ViaticoManuAlojNS and inputs.ViaticoManuAlojNS.amount or False</field>
@@ -911,8 +844,8 @@ else:
         <field name="sequence" eval="302"/>
         <field name="code">1303-2</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
-        <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720595"/>
+        <field name="account_credit" ref="l10n_co.co_puc_250505"/>
         <field name="category_id" ref="hr_payroll_categories_rod"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.ViaticoManuAlojNS and inputs.ViaticoManuAlojNS.amount or False</field>
@@ -925,7 +858,7 @@ else:
         <field name="sequence" eval="306"/>
         <field name="code">1104</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_510518"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_510518"/>
         <field name="category_id" ref="hr_payroll_categories_comisiones"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.VENTAS and inputs.VENTAS.amount or False</field>
@@ -938,7 +871,7 @@ else:
         <field name="sequence" eval="306"/>
         <field name="code">1204</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="l10n_co.co_puc_520518"/-->
+        <field name="account_debit" ref="l10n_co.co_puc_520518"/>
         <field name="category_id" ref="hr_payroll_categories_comisiones"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.VENTAS and inputs.VENTAS.amount or False</field>
@@ -951,7 +884,7 @@ else:
         <field name="sequence" eval="306"/>
         <field name="code">1304</field>
         <field name="rule_type">devengos</field>
-        <!--field name="account_debit" ref="account_extra.co_puc_720518"/-->
+        <field name="account_debit" ref="account_extra.co_puc_720518"/>
         <field name="category_id" ref="hr_payroll_categories_comisiones"/>
         <field name="condition_select">python</field>
         <field name="condition_python">result = inputs.VENTAS and inputs.VENTAS.amount or False</field>
@@ -966,22 +899,15 @@ else:
             <field name="sequence" eval="400"/>
             <field name="code">1105</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510527"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510527"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_AUXTRANSPORTE"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.wage &lt;= (2*employee.company.salario_minimo) or False</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
     if  worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
-        flag_sunday = False
-        for sunday in payslip.leaves_ids:
-            if sunday.include_sunday and not flag_sunday:
-                flag_sunday = True
-        if flag_sunday:
-            x=worked_days.WORK100.number_of_days
-        else:
-            x=worked_days.WORK100.number_of_days-1
+        x=worked_days.WORK100.number_of_days-1
         result = round(x*employee.company.aux_transporte / 30)
 else:
     result = round(worked_days.WORK100.number_of_days*employee.company.aux_transporte / 30)</field>
@@ -992,22 +918,15 @@ else:
             <field name="sequence" eval="400"/>
             <field name="code">1205</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520527"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520527"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_AUXTRANSPORTE"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.wage &lt;= (2*employee.company.salario_minimo) or False</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
     if  worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
-        flag_sunday = False
-        for sunday in payslip.leaves_ids:
-            if sunday.include_sunday and not flag_sunday:
-                flag_sunday = True
-        if flag_sunday:
-            x=worked_days.WORK100.number_of_days
-        else:
-            x=worked_days.WORK100.number_of_days-1
+        x=worked_days.WORK100.number_of_days-1
         result = round(x*employee.company.aux_transporte / 30)
 else:
     result = round(worked_days.WORK100.number_of_days*employee.company.aux_transporte / 30)</field>
@@ -1018,22 +937,15 @@ else:
             <field name="sequence" eval="400"/>
             <field name="code">1305</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720527"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720527"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_AUXTRANSPORTE"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.wage &lt;= (2*employee.company.salario_minimo) or False</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
     if  worked_days.AUSENCIA_NO_REMUNERADO.number_of_days:
-        flag_sunday = False
-        for sunday in payslip.leaves_ids:
-            if sunday.include_sunday and not flag_sunday:
-                flag_sunday = True
-        if flag_sunday:
-            x=worked_days.WORK100.number_of_days
-        else:
-            x=worked_days.WORK100.number_of_days-1
+        x=worked_days.WORK100.number_of_days-1
         result = round(x*employee.company.aux_transporte / 30)
 else:
     result = round(worked_days.WORK100.number_of_days*employee.company.aux_transporte / 30)</field>
@@ -1045,7 +957,7 @@ else:
             <field name="sequence" eval="409"/>
             <field name="code">1106</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510595"/>
             <field name="category_id" ref="hr_payroll_categories_AUXTRANSPORTE"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.subsf and inputs.subsf.amount or False</field>
@@ -1058,7 +970,7 @@ else:
             <field name="sequence" eval="409"/>
             <field name="code">1206</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520595"/>
             <field name="category_id" ref="hr_payroll_categories_AUXTRANSPORTE"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.subsf and inputs.subsf.amount or False</field>
@@ -1071,7 +983,7 @@ else:
             <field name="sequence" eval="409"/>
             <field name="code">1306</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720595"/>
             <field name="category_id" ref="hr_payroll_categories_AUXTRANSPORTE"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.subsf and inputs.subsf.amount or False</field>
@@ -1086,7 +998,8 @@ else:
             <field name="sequence" eval="507"/>
             <field name="code">1001</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_138095"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_138095"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_inca"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.EPS_maternidad and worked_days.EPS_maternidad.number_of_days or False</field>
@@ -1099,7 +1012,8 @@ else:
             <field name="sequence" eval="505"/>
             <field name="code">1002</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_138095"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_138095"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_inca"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.incapacidad_ARL and worked_days.incapacidad_ARL.number_of_days or False</field>
@@ -1112,7 +1026,8 @@ else:
             <field name="sequence" eval="509"/>
             <field name="code">1003</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_138095"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_138095"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_inca"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.EPS_paternidad and worked_days.EPS_paternidad.number_of_days or False</field>
@@ -1125,7 +1040,8 @@ else:
             <field name="sequence" eval="500"/>
             <field name="code">1004</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510524"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510524"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_inca"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.luto and worked_days.luto.number_of_days or False</field>
@@ -1138,17 +1054,18 @@ else:
             <field name="sequence" eval="501"/>
             <field name="code">1005</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510524"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510524"/>
             <field name="category_id" ref="hr_payroll_categories_inca"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = (contract.execute_rules_leave_EPS(payslip))[0]</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">diff = (contract.execute_rules_leave_EPS(payslip))[1]
 eps_days = diff
-x=((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc", "vac"])))
+x=((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"])))
 if eps_days > 2:
     if x > 1:
-        x=(((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc", "vac"])))/30)*diff
+        x=(((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"])))/30)*diff
         if (x/2) &lt; employee.company.salario_minimo/30:
             result=round(employee.company.salario_minimo/30*diff)
         else:
@@ -1161,7 +1078,7 @@ if eps_days > 2:
             result = round(x)
 else:
     if x > 1:
-        x = (((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc", "vac"])))/30)*eps_days
+        x = (((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"])))/30)*eps_days
         if (x/eps_days) &lt; employee.company.salario_minimo/30:
             result=round(employee.company.salario_minimo/30*eps_days)
         else:
@@ -1179,7 +1096,8 @@ else:
             <field name="sequence" eval="502"/>
             <field name="code">1006</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_138095"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_138095"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_inca"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = contract.execute_rules_leave_EPS(payslip)[2]</field>
@@ -1187,20 +1105,20 @@ else:
             <field name="amount_python_compute">diff = contract.execute_rules_leave_EPS(payslip)
 number_of_days = (contract.execute_rules_leave_EPS(payslip))[3]
 
-x=((contract._get_last_month(payslip,["SUELDO"])))
+x=((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"])))
 if x>1:
-    result = round(x)
-    x=((((contract._get_last_month(payslip,["SUELDO"])))/30)*(number_of_days))*0.6667
+    result = x
+    x=((((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"])))/30)*(number_of_days))*0.6667
     if (x/(number_of_days)) &lt; (employee.company.salario_minimo/30):
         result=(employee.company.salario_minimo/30) * (number_of_days)
     else:
-        result=round(x)
+        result=x
 else:
     x=((contract.wage / 30)*(number_of_days)) * 0.6667
     if (x / (number_of_days)) &lt; (employee.company.salario_minimo/30):
-        result=round((employee.company.salario_minimo/30)*(number_of_days))
+        result=(employee.company.salario_minimo/30)*(number_of_days)
     else:
-        result=round(x)</field>
+        result=x</field>
         </record>
 
 <!-- horas extras-->
@@ -1210,7 +1128,7 @@ else:
             <field name="sequence" eval="204"/>
             <field name="code">1107-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "recargo_nocturno") != 0</field>
@@ -1223,7 +1141,7 @@ else:
             <field name="sequence" eval="204"/>
             <field name="code">1207-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "recargo_nocturno") != 0</field>
@@ -1236,7 +1154,7 @@ else:
             <field name="sequence" eval="204"/>
             <field name="code">1307-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "recargo_nocturno") != 0</field>
@@ -1250,7 +1168,7 @@ else:
             <field name="sequence" eval="202"/>
             <field name="code">1107-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_nocturno") != 0</field>
@@ -1263,7 +1181,7 @@ else:
             <field name="sequence" eval="202"/>
             <field name="code">1207-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_nocturno") != 0</field>
@@ -1277,7 +1195,7 @@ else:
             <field name="sequence" eval="202"/>
             <field name="code">1307-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_nocturno") != 0</field>
@@ -1290,7 +1208,7 @@ else:
             <field name="sequence" eval="206"/>
             <field name="code">1107-3</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "h_diurna_festiva") != 0</field>
@@ -1303,7 +1221,7 @@ else:
             <field name="sequence" eval="206"/>
             <field name="code">1207-3</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "h_diurna_festiva") != 0</field>
@@ -1316,7 +1234,7 @@ else:
             <field name="sequence" eval="206"/>
             <field name="code">1307-3</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "h_diurna_festiva") != 0</field>
@@ -1329,8 +1247,8 @@ else:
             <field name="sequence" eval="201"/>
             <field name="code">1107-4</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_diurna_normal") != 0</field>
@@ -1343,8 +1261,8 @@ else:
             <field name="sequence" eval="201"/>
             <field name="code">1207-4</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_diurna_normal") != 0</field>
@@ -1357,8 +1275,8 @@ else:
             <field name="sequence" eval="201"/>
             <field name="code">1307-4</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_diurna_normal") != 0</field>
@@ -1372,7 +1290,7 @@ else:
             <field name="sequence" eval="205"/>
             <field name="code">1107-5</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "recargo_nocturna_f_d") != 0</field>
@@ -1385,7 +1303,7 @@ else:
             <field name="sequence" eval="205"/>
             <field name="code">1207-5</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "recargo_nocturna_f_d") != 0</field>
@@ -1398,7 +1316,7 @@ else:
             <field name="sequence" eval="205"/>
             <field name="code">1307-5</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "recargo_nocturna_f_d") != 0</field>
@@ -1411,7 +1329,7 @@ else:
             <field name="sequence" eval="200"/>
             <field name="code">1107-6</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_diurna_festiva") != 0</field>
@@ -1424,7 +1342,7 @@ else:
             <field name="sequence" eval="200"/>
             <field name="code">1207-6</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_diurna_festiva") != 0</field>
@@ -1437,7 +1355,7 @@ else:
             <field name="sequence" eval="200"/>
             <field name="code">1307-6</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "hora_extra_diurna_festiva") != 0</field>
@@ -1450,7 +1368,7 @@ else:
             <field name="sequence" eval="203"/>
             <field name="code">1107-7</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "trabajo_extra_nocturno_domingos_festivos") != 0</field>
@@ -1463,7 +1381,7 @@ else:
             <field name="sequence" eval="203"/>
             <field name="code">1207-7</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520515"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "trabajo_extra_nocturno_domingos_festivos") != 0</field>
@@ -1476,7 +1394,7 @@ else:
             <field name="sequence" eval="203"/>
             <field name="code">1307-7</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720515"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720515"/>
             <field name="category_id" ref="hr_payroll_categories_horas_extra"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = employee.get_overtime(employee.id,payslip.date_from,payslip.date_to, "trabajo_extra_nocturno_domingos_festivos") != 0</field>
@@ -1489,15 +1407,15 @@ else:
             <field name="sequence" eval="709"/>
             <field name="code">1118</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510536"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261020"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510536"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261020"/>
             <field name="category_id" ref="hr_payroll_pprim"/>
             <field name="condition_select">python</field>
             <field name="condition_python">if payslip.date_to.day > 15 and (payslip.date_to.month == 6 or payslip.date_to.month == 12) or payslip.is_liquid:
     result = True
             </field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = contract._calculate_payment_prima(payslip.date_to) + categories.pro_pri</field>
+            <field name="amount_python_compute">result = contract._calculate_payment_prima(payslip.date_to, payslip) + categories.pro_pri</field>
         </record>
 
 <record id="hr_rule_Prima_de_ser_ven" model="hr.salary.rule">
@@ -1505,15 +1423,15 @@ else:
             <field name="sequence" eval="709"/>
             <field name="code">1218</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520536"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261020"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520536"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261020"/>
             <field name="category_id" ref="hr_payroll_pprim"/>
             <field name="condition_select">python</field>
             <field name="condition_python">if payslip.date_to.day > 15 and (payslip.date_to.month == 6 or payslip.date_to.month == 12) or payslip.is_liquid:
     result = True
             </field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = contract._calculate_payment_prima(payslip.date_to) + categories.pro_pri</field>
+            <field name="amount_python_compute">result = contract._calculate_payment_prima(payslip.date_to, payslip) + categories.pro_pri</field>
         </record>
 
 <record id="hr_rule_Prima_de_ser_ops" model="hr.salary.rule">
@@ -1521,15 +1439,15 @@ else:
             <field name="sequence" eval="709"/>
             <field name="code">1318</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720536"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261020"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720536"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261020"/>
             <field name="category_id" ref="hr_payroll_pprim"/>
             <field name="condition_select">python</field>
             <field name="condition_python">if payslip.date_to.day > 15 and (payslip.date_to.month == 6 or payslip.date_to.month == 12) or payslip.is_liquid:
     result = True
             </field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = contract._calculate_payment_prima(payslip.date_to) + categories.pro_pri</field>
+            <field name="amount_python_compute">result = contract._calculate_payment_prima(payslip.date_to, payslip) + categories.pro_pri</field>
         </record>
 
 <!-- deducciones-->
@@ -1539,93 +1457,27 @@ else:
             <field name="sequence" eval="805"/>
             <field name="code">1008</field>
             <field name="rule_type">deducciones</field>
-            <!--field name="account_credit" ref="l10n_co.co_puc_237005"/-->
-            <!--field name="account_debit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_credit" ref="l10n_co.co_puc_237005"/>
+            <field name="account_debit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_sal"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">flag_sunday = False
-flag_anr = False
-if payslip.leaves_ids:
-    flag_sunday = False
-    for sunday in payslip.leaves_ids:
-        if sunday.holiday_status_id.name == "AUSENCIA_NO_REMUNERADO":
-            flag_anr = True
-            if sunday.include_sunday:
-                flag_sunday = True
-if flag_sunday == False and flag_anr == False:
-    flag_sunday = True
-if flag_sunday:
-    if payslip.is_liquid:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+ (categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-    else:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+ (categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
+            <field name="amount_python_compute">if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
+elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
+elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
+elif contract.bono_es_prestacional and contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
+elif contract.rodamiento_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
+elif contract.bono_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
+elif contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
 else:
-    if payslip.is_liquid:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+ (categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-    else:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+ (categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-            </field>
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))</field>
         </record>
     
     <record id="hr_rule_pen" model="hr.salary.rule">
@@ -1633,116 +1485,46 @@ else:
             <field name="sequence" eval="808"/>
             <field name="code">1009</field>
             <field name="rule_type">deducciones</field>
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
-            <!--field name="account_debit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
+            <field name="account_debit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_pen"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">flag_sunday = False
-flag_anr = False
-if payslip.leaves_ids:
-    flag_sunday = False
-    for sunday in payslip.leaves_ids:
-        if sunday.holiday_status_id.name == "AUSENCIA_NO_REMUNERADO":
-            flag_anr = True
-            if sunday.include_sunday:
-                flag_sunday = True
-if flag_sunday == False and flag_anr == False:
-    flag_sunday = True
-if flag_sunday:
-    if payslip.is_liquid:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+ (categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-    else:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+ (categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
+            <field name="amount_python_compute">if contract.contract_type == '5':
+    result = 0
+elif contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
+elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
+elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
+elif contract.bono_es_prestacional and contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
+elif contract.rodamiento_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
+elif contract.bono_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
+elif contract.comision_es_prestacional:
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
 else:
-    if payslip.is_liquid:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+ (categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-    else:
-        if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+ (categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04)+(categories.rod*0.04))
-        elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04)+(categories.bono*0.04))
-        elif contract.rodamiento_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+(categories.rod*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-        elif contract.bono_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.bono*0.04))
-        elif contract.comision_es_prestacional:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04)+(categories.com*0.04))
-        else:
-            result=round(((contract.wage/30)*(worked_days.WORK100.number_of_days - 1))*0.04+(categories.vac*0.04)+(categories.HORAS_EXTRAS*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))
-            </field>
+    result=round(((contract.wage/30)*worked_days.WORK100.number_of_days)*0.04+(categories.HORAS_EXTRAS*0.04)+(categories.vac*0.04)+(categories.ajs*0.04)+((categories.inc+categories.mat+categories.pat+categories.luto)*0.04))</field>
         </record>
 
 <record id="hr_rule_apen" model="hr.salary.rule">
             <field name="name">Aporte Pensión Empleado</field>
             <field name="sequence" eval="806"/>
             <field name="code">1010</field>
-            <field name="rule_type">deducciones</field>
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="rule_type">devengos</field>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_categories_apen"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days or False</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">x=round((((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"]))/30)*worked_days.AUSENCIA_NO_REMUNERADO.number_of_days)*0.04)  
-flag = False
-for sunday in payslip.leaves_ids:
-    if sunday.include_sunday:
-        flag = True
-if flag:
-    result = 0
-elif x>1:
-    result=round(x)
+            <field name="amount_python_compute">x=round((((contract._get_last_month(payslip,["SUELDO","HORAS_EXTRAS","inc"]))/30)*worked_days.AUSENCIA_NO_REMUNERADO.number_of_days)*0.04)
+if x>1:
+    result=x
 else:
-    result=round((((contract.wage/30)+categories.HORAS_EXTRAS+categories.inc)*worked_days.AUSENCIA_NO_REMUNERADO.number_of_days)*0.04)</field>
+    result=(((contract.wage/30)+categories.HORAS_EXTRAS+categories.inc)*worked_days.AUSENCIA_NO_REMUNERADO.number_of_days)*0.04</field>
         </record>
 
     <record id="hr_rule_fsp" model="hr.salary.rule">
@@ -1750,8 +1532,8 @@ else:
             <field name="sequence" eval="809"/>
             <field name="code">1011</field>
             <field name="rule_type">deducciones</field>
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
-            <!--field name="account_debit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
+            <field name="account_debit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_fsp"/>
             <field name="condition_select">python</field>
             <field name="condition_python">if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
@@ -1772,21 +1554,21 @@ else:
     result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.inc)&gt; 4*employee.company.salario_minimo</field>
             <field name="amount_select">code</field>
             <field name="amount_python_compute">if contract.rodamiento_es_prestacional and contract.bono_es_prestacional and contract.comision_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.bono+categories.rod+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.bono+categories.rod+categories.inc)*0.01
 elif contract.bono_es_prestacional and contract.rodamiento_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.bono+categories.rod+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.bono+categories.rod+categories.inc)*0.01
 elif contract.rodamiento_es_prestacional and contract.comision_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.rod+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.rod+categories.inc)*0.01
 elif contract.bono_es_prestacional and contract.comision_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.bono+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.bono+categories.inc)*0.01
 elif contract.rodamiento_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.rod+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.rod+categories.inc)*0.01
 elif contract.bono_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.bono+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.bono+categories.inc)*0.01
 elif contract.comision_es_prestacional:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.inc)*0.01)
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.com+categories.inc)*0.01
 else:
-    result = round((((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.inc)*0.01)</field>
+    result = (((contract.wage/30)*worked_days.WORK100.number_of_days)+categories.HORAS_EXTRA+categories.inc)*0.01</field>
         </record>
 
 <record id="hr_rule_ded_dep" model="hr.salary.rule">
@@ -1814,26 +1596,6 @@ else:
             <field name="amount_python_compute">result=inputs.des.amount</field>
         </record>
 
-        <!--record id="hr_rule_prestamo" model="hr.salary.rule">
-            <field name="name">Préstamos</field>
-            <field name="sequence" eval="835"/>
-            <field name="code">1013</field>
-            <field name="rule_type">deducciones</field>
-            <field name="account_credit" ref="l10n_co.co_puc_136525"/>
-            <field name="account_debit" ref="l10n_co.co_puc_250505"/>
-            <field name="category_id" ref="hr_payroll_prestamo"/>
-            <field name="condition_select">python</field>
-            <field name="condition_python">result=inputs.LO and inputs.LO.amount</field>
-            <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = -(inputs.LO and - (inputs.LO.amount))</field>
-        </record-->
-
-        <!--record id="hr_rule_input_loan" model="hr.rule.input">
-            <field name="code">LO</field>
-            <field name="name">Préstamos</field>
-            <field name="input_id" ref="hr_rule_prestamo"/>
-        </record-->
-
 <!-- advance salary rule -->
         <!--record id="hr_payslip_rule_advance" model="hr.salary.rule">
             <field name="code">1015</field>
@@ -1853,9 +1615,9 @@ else:
             <field name="code">1016</field>
             <field name="name">Pago Terceros</field>
             <field name="rule_type">deducciones</field>
-            <field name="category_id" ref="hr_payroll.DED"/>
-            <!--field name="account_credit" ref="account_extra.co_puc_281505"/-->
-            <!--field name="account_debit" ref="l10n_co.co_puc_250505"/-->
+            <field name="category_id" ref="hr_payroll_categories_pagoterc"/>
+            <field name="account_credit" ref="account_extra.co_puc_281505"/>
+            <field name="account_debit" ref="l10n_co.co_puc_250505"/>
             <field name="condition_select">python</field>            
             <field name="condition_python">result = inputs.PagosTerceros and inputs.PagosTerceros.amount or False</field>
             <field name="amount_select">code</field>
@@ -1881,13 +1643,29 @@ else:
             <field name="sequence" eval="840"/>
             <field name="code">1014</field>
             <field name="rule_type">deducciones</field>
-            <!--field name="account_credit" ref="l10n_co.co_puc_236505"/-->
+            <field name="account_credit" ref="l10n_co.co_puc_236505"/>
             <field name="category_id" ref="hr_payroll_categories_retefuente"/>
             <field name="condition_select">python</field>
-            <field name="condition_python">result = inputs.ret and inputs.ret.amount or False</field>
+            <field name="condition_python">result = ((contract.wage/30)*worked_days.WORK100.number_of_days)/employee.company.salario_uvt &gt;= 95</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = inputs.ret.amount</field>
+            <field name="amount_python_compute">inmd= ((contract.wage/30)*worked_days.WORK100.number_of_days)-categories.PEN-categories.SAL-categories.FSP-categories.ded_dep-categories.HORAS_EXTRA
+re25 =(inmd-(inmd*0.25))/employee.company.salario_uvt
+if re25 &gt; 95 and re25 &lt; 150:
+    result= ((re25 - 95)*0.19)*employee.company.salario_uvt
+elif re25 &gt; 150 and re25 &lt; 360:
+    result= (((re25 - 150)*0.28)+10)*employee.company.salario_uvt
+elif re25 &gt; 360 and re25 &lt; 640:
+    result= (((re25 - 360)*0.33)+69)*employee.company.salario_uvt
+elif re25 &gt; 640 and re25 &lt; 945:
+    result= (((re25 - 640)*0.35)+162)*employee.company.salario_uvt
+elif re25 &gt; 945 and re25 &lt; 2300:
+    result= (((re25 - 945)*0.37)+267)*employee.company.salario_uvt
+else:
+    result = (((re25 - 2300)*0.39)+770)*employee.company.salario_uvt</field>
         </record>
+
+
+
 <!-- totales-->
 
 <record id="hr_rule_total_Horas_extras" model="hr.salary.rule">
@@ -1909,7 +1687,7 @@ else:
             <field name="category_id" ref="hr_payroll_categories_DEVE"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
-            <field name="amount_python_compute">result = categories.SUELDO + categories.HORAS_EXTRAS + categories.bono +categories.cesan + categories.vac + categories.intcesan + categories.DEVENGOS+ categories.AUX_TRANSPORTE + categories.inc+categories.com+categories.rod+categories.luto+categories.mat+categories.pat+categories.ajs+categories.sbf+categories.pprim + categories.dotacion</field>
+            <field name="amount_python_compute">result = categories.ALW + categories.SUELDO + categories.HORAS_EXTRAS + categories.bono +categories.cesan + categories.vac + categories.intcesan + categories.ALW+ categories.AUX_TRANSPORTE + categories.inc+categories.com+categories.rod+categories.luto+categories.mat+categories.pat+categories.ajs+categories.sbf+categories.pprim</field>
         </record>
 
 <record id="hr_rule_total_inc" model="hr.salary.rule">
@@ -1952,8 +1730,8 @@ else:
             <field name="sequence" eval="600"/>
             <field name="code">1108</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237010"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237010"/>
             <field name="category_id" ref="hr_payroll_cdc"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -1980,8 +1758,8 @@ else:
             <field name="sequence" eval="600"/>
             <field name="code">1208</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237010"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237010"/>
             <field name="category_id" ref="hr_payroll_cdc"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2008,8 +1786,8 @@ else:
             <field name="sequence" eval="600"/>
             <field name="code">1308</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237010"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237010"/>
             <field name="category_id" ref="hr_payroll_cdc"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2037,8 +1815,8 @@ else:
             <field name="sequence" eval="701"/>
             <field name="rule_type">none</field>
             <field name="code">1117</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510539"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261015"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510539"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261015"/>
             <field name="category_id" ref="hr_payroll_pro_vac"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2062,11 +1840,11 @@ else:
 
 <record id="hr_rule_provi_vac_ven" model="hr.salary.rule">
             <field name="name">Provisión Vacaciones</field>
-            <field name="sequence" eval="1005"/>
+            <field name="sequence" eval="701"/>
             <field name="code">1217</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520539"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261015"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520539"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261015"/>
             <field name="category_id" ref="hr_payroll_pro_vac"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2090,11 +1868,11 @@ else:
 
 <record id="hr_rule_provi_vac_ops" model="hr.salary.rule">
             <field name="name">Provisión Vacaciones</field>
-            <field name="sequence" eval="1005"/>
+            <field name="sequence" eval="701"/>
             <field name="code">1317</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261015"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261015"/>
             <field name="category_id" ref="hr_payroll_pro_vac"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2121,8 +1899,8 @@ else:
             <field name="sequence" eval="700"/>
             <field name="code">1109</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510536"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261020"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510536"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261020"/>
             <field name="category_id" ref="hr_payroll_pro_pri"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2146,11 +1924,11 @@ else:
 
 <record id="hr_rule_pro_prima_ven" model="hr.salary.rule">
             <field name="name">Provision Prima</field>
-            <field name="sequence" eval="1000"/>
+            <field name="sequence" eval="700"/>
             <field name="code">1209</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520536"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261020"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520536"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261020"/>
             <field name="category_id" ref="hr_payroll_pro_pri"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2174,11 +1952,11 @@ else:
 
 <record id="hr_rule_pro_prima_ops" model="hr.salary.rule">
             <field name="name">Provision Prima</field>
-            <field name="sequence" eval="1000"/>
+            <field name="sequence" eval="700"/>
             <field name="code">1309</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261015"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261015"/>
             <field name="category_id" ref="hr_payroll_pro_pri"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2205,8 +1983,8 @@ else:
             <field name="sequence" eval="850"/>
             <field name="code">1110</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510568"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237006"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510568"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237006"/>
             <field name="category_id" ref="hr_payroll_ARL_p"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2297,8 +2075,8 @@ elif contract.clase_riesgo =="5":
             <field name="sequence" eval="850"/>
             <field name="code">1210</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520568"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237006"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520568"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237006"/>
             <field name="category_id" ref="hr_payroll_ARL_p"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2389,8 +2167,8 @@ elif contract.clase_riesgo =="5":
             <field name="sequence" eval="850"/>
             <field name="code">1310</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720568"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237006"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720568"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237006"/>
             <field name="category_id" ref="hr_payroll_ARL_p"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2481,8 +2259,8 @@ elif contract.clase_riesgo =="5":
             <field name="sequence" eval="702"/>
             <field name="code">1111</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510530"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261005"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510530"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261005"/>
             <field name="category_id" ref="hr_payroll_pro_ces"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2506,11 +2284,11 @@ else:
 
         <record id="hr_rule_pro_cesa_ven" model="hr.salary.rule">
             <field name="name">Provision Cesantias</field>
-            <field name="sequence" eval="1001"/>
+            <field name="sequence" eval="702"/>
             <field name="code">1211</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520530"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261005"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520530"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261005"/>
             <field name="category_id" ref="hr_payroll_pro_ces"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2534,11 +2312,11 @@ else:
 
 <record id="hr_rule_pro_cesa_ops" model="hr.salary.rule">
             <field name="name">Provision Cesantias</field>
-            <field name="sequence" eval="1001"/>
+            <field name="sequence" eval="702"/>
             <field name="code">1311</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720530"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261005"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720530"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261005"/>
             <field name="category_id" ref="hr_payroll_pro_ces"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2565,8 +2343,8 @@ else:
             <field name="sequence" eval="703"/>
             <field name="code">1112</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510533"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261010"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510533"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261010"/>
             <field name="category_id" ref="hr_payroll_pro_in_ces"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2575,11 +2353,11 @@ else:
 
         <record id="hr_rule_pro_incesa_ven" model="hr.salary.rule">
             <field name="name">Provision Interes Cesantias</field>
-            <field name="sequence" eval="1002"/>
+            <field name="sequence" eval="703"/>
             <field name="code">1212</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520533"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261010"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520533"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261010"/>
             <field name="category_id" ref="hr_payroll_pro_in_ces"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2591,8 +2369,8 @@ else:
             <field name="sequence" eval="193"/>
             <field name="code">1121-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510595"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PagoS and inputs.PagoS.amount or False</field>
@@ -2605,8 +2383,8 @@ else:
             <field name="sequence" eval="193"/>
             <field name="code">1221-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520595"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PagoS and inputs.PagoS.amount or False</field>
@@ -2619,8 +2397,8 @@ else:
             <field name="sequence" eval="193"/>
             <field name="code">1321-1</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720595"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PagoS and inputs.PagoS.amount or False</field>
@@ -2633,8 +2411,8 @@ else:
             <field name="sequence" eval="194"/>
             <field name="code">1121-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510595"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510595"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PagoNS and inputs.PagoNS.amount or False</field>
@@ -2647,8 +2425,8 @@ else:
             <field name="sequence" eval="194"/>
             <field name="code">1221-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520595"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520595"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PagoNS and inputs.PagoNS.amount or False</field>
@@ -2661,8 +2439,8 @@ else:
             <field name="sequence" eval="194"/>
             <field name="code">1321-2</field>
             <field name="rule_type">devengos</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720595"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_250505"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720595"/>
+            <field name="account_credit" ref="l10n_co.co_puc_250505"/>
             <field name="category_id" ref="hr_payroll_categories_bon"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = inputs.PagoNS and inputs.PagoNS.amount or False</field>
@@ -2672,11 +2450,11 @@ else:
 
         <record id="hr_rule_pro_incesa_ops" model="hr.salary.rule">
             <field name="name">Provision Interes Cesantias</field>
-            <field name="sequence" eval="1002"/>
+            <field name="sequence" eval="703"/>
             <field name="code">1312</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_261010"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_261010"/>
             <field name="category_id" ref="hr_payroll_pro_in_ces"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2688,8 +2466,8 @@ else:
             <field name="sequence" eval="1002"/>
             <field name="code">1113</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510569"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237005"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510569"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237005"/>
             <field name="category_id" ref="hr_payroll_sal_emp"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2716,8 +2494,8 @@ else:
             <field name="sequence" eval="1002"/>
             <field name="code">1213</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520569"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237005"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520569"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237005"/>
             <field name="category_id" ref="hr_payroll_sal_emp"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2744,8 +2522,8 @@ else:
             <field name="sequence" eval="1002"/>
             <field name="code">1313</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_237005"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_237005"/>
             <field name="category_id" ref="hr_payroll_sal_emp"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2772,8 +2550,8 @@ else:
             <field name="sequence" eval="1021"/>
             <field name="code">1114</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510570"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510570"/>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_aporte_pen_empr"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days or False</field>
@@ -2786,8 +2564,8 @@ else:
             <field name="sequence" eval="1021"/>
             <field name="code">1214</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520570"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520570"/>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_aporte_pen_empr"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days or False</field>
@@ -2800,8 +2578,8 @@ else:
             <field name="sequence" eval="1021"/>
             <field name="code">1314</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_aporte_pen_empr"/>
             <field name="condition_select">python</field>
             <field name="condition_python">result = worked_days.AUSENCIA_NO_REMUNERADO and worked_days.AUSENCIA_NO_REMUNERADO.number_of_days or False</field>
@@ -2814,8 +2592,8 @@ else:
             <field name="sequence" eval="1022"/>
             <field name="code">1115</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_510570"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_510570"/>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_pension_empr"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2842,8 +2620,8 @@ else:
             <field name="sequence" eval="1022"/>
             <field name="code">1215</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="l10n_co.co_puc_520570"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="account_debit" ref="l10n_co.co_puc_520570"/>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_pension_empr"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2870,8 +2648,8 @@ else:
             <field name="sequence" eval="1022"/>
             <field name="code">1315</field>
             <field name="rule_type">none</field>
-            <!--field name="account_debit" ref="account_extra.co_puc_720572"/-->
-            <!--field name="account_credit" ref="l10n_co.co_puc_238030"/-->
+            <field name="account_debit" ref="account_extra.co_puc_720572"/>
+            <field name="account_credit" ref="l10n_co.co_puc_238030"/>
             <field name="category_id" ref="hr_payroll_pension_empr"/>
             <field name="condition_select">none</field>
             <field name="amount_select">code</field>
@@ -2907,7 +2685,6 @@ else:
 
     <record id="hr_rule_baux" model="hr.salary.rule">
         <field name="name">Base Subsidio de transporte</field>
-        <field name="active">False</field>
         <field name="sequence" eval="500"/>
         <field name="code">1509</field>
         <field name="rule_type">none</field>
@@ -2928,6 +2705,14 @@ else:
         <field name="amount_select">code</field>
         <field name="amount_python_compute">result=contract.wage</field>
     </record>
+
+    <record id="bi_hr_employee_loan_comm.hr_loan_installment_rule" model="hr.salary.rule">
+        <field name="rule_type">deducciones</field>
+    </record>
+
+    <record id="bi_hr_employee_loan_comm.hr_loan_interest_rule" model="hr.salary.rule">
+        <field name="rule_type">deducciones</field>
+    </record>
     
 
     
@@ -2939,11 +2724,16 @@ else:
         <field name="parent_id"></field>
         <field eval="[(6, 0, [
                 ref('hr_rule_cesan'),
-				ref('hr_rule_incesan'),						
+				ref('hr_rule_incesan'),	
+		     	ref('hr_rule_Prima_de_ser_2'),
 				ref('hr_rule_SALARIO_adm'),
 				ref('hr_rule_ajuste_sal_adm'),
 				ref('hr_rule_bon_adm'),
+                ref('bi_hr_employee_loan_comm.hr_loan_disburse_rule'),
 				ref('hr_rule_bon_adm_ns'),
+                ref('bi_hr_employee_loan_comm.hr_loan_installment_rule'),
+                ref('bi_hr_employee_loan_comm.hr_loan_interest_rule'),
+                ref('bi_employee_advance_salary_comm.hr_rule_advance_salary'),
 				ref('hr_rule_rod_adm'),
 				ref('hr_rule_rod_adm_ns'),
 				ref('hr_rule_com_adm'),
@@ -2977,18 +2767,21 @@ else:
                 ref('hr_rule_bono_epctvs_ns'),
                 ref('hr_rule_bono_epctvs_pago'),
                 ref('hr_rule_bono_epctvs_pago_ns'),
-                ref('hr_rule_dotacion'),
 				ref('hr_rule_sal'),
 				ref('hr_rule_pen'),
 				ref('hr_rule_apen'),
-                ref('ohrms_loan.hr_rule_loan'),
-                ref('ohrms_salary_advance.hr_payslip_rule_advance'),
 				ref('hr_rule_fsp'),
 				ref('hr_rule_descuentos'),
 				ref('hr_rule_retefuente'),
 				ref('hr_rule_total_Horas_extras'),
                 ref('hr_rule_total_devengado_liq'),
-                 
+                ref('hr_rule_base_vacac'),
+                ref('hr_rule_base_cesan'),
+                ref('hr_rule_base_prima'),
+                ref('hr_rule_base_horas_extra'),
+                ref('hr_rule_base_variable'),
+                ref('hr_rule_base_sub_transporte'),
+                ref('hr_rule_base_salario'),
                 ref('hr_payslip_pago_teceros'),
 				ref('hr_rule_total_devengado'),
 				ref('hr_rule_total_inc'),
@@ -3013,6 +2806,9 @@ else:
 				ref('hr_rule_rod_ven_ns'),
 				ref('hr_rule_com_ven'),
 				ref('hr_rule_auxtra_ven'),
+                ref('bi_hr_employee_loan_comm.hr_loan_installment_rule'),
+                ref('bi_hr_employee_loan_comm.hr_loan_interest_rule'),
+                ref('bi_employee_advance_salary_comm.hr_rule_advance_salary'),
 				ref('hr_rule_sub_famili_ven'),
 				ref('hr_rule_recargo_nocturno_ven'),
 				ref('hr_rule_hora_extra_nocturna_ven'),
@@ -3033,20 +2829,18 @@ else:
                 ref('hr_rule_bono_epctvs_ns_ven'),
                 ref('hr_rule_bono_epctvs_pago_ven'),
                 ref('hr_rule_bono_epctvs_pago_ns_ven'),
-                ref('hr_rule_dotacion_12'),
 				ref('hr_rule_inca_mat'),
 				ref('hr_rule_inca_arl'),
 				ref('hr_rule_inca_pat'),
 				ref('hr_rule_inca_lut'),
 				ref('hr_rule_inca_eps_100'),
 				ref('hr_rule_inca_eps_66'),
+                ref('hr_rule_vac_ven'),
 				ref('hr_rule_Prima_de_ser'),
 				ref('hr_rule_pro_cesa_ven'),
 				ref('hr_rule_sal'),
 				ref('hr_rule_pen'),
 				ref('hr_rule_apen'),
-                ref('ohrms_loan.hr_rule_loan'),
-                ref('ohrms_salary_advance.hr_payslip_rule_advance'),
 				ref('hr_rule_fsp'),
 				ref('hr_rule_descuentos'),
 				ref('hr_rule_retefuente'),
@@ -3074,6 +2868,9 @@ else:
 				ref('hr_rule_ajuste_sal_ops'),
 				ref('hr_rule_bon_ops'),
 				ref('hr_rule_bon_ops_ns'),
+                ref('bi_hr_employee_loan_comm.hr_loan_installment_rule'),
+                ref('bi_hr_employee_loan_comm.hr_loan_interest_rule'),
+                ref('bi_employee_advance_salary_comm.hr_rule_advance_salary'),
 				ref('hr_rule_rod_ops'),
 				ref('hr_rule_rod_ops_ns'),
 				ref('hr_rule_com_ops'),
@@ -3106,13 +2903,10 @@ else:
                 ref('hr_rule_bono_epctvs_ns_ops'),
                 ref('hr_rule_bono_epctvs_pago_ops'),
                 ref('hr_rule_bono_epctvs_pago_ns_ops'),
-                ref('hr_rule_dotacion_13'),
 				ref('hr_rule_pro_cesa_ops'),
 				ref('hr_rule_sal'),
 				ref('hr_rule_pen'),
 				ref('hr_rule_apen'),
-                ref('ohrms_loan.hr_rule_loan'),
-                ref('ohrms_salary_advance.hr_payslip_rule_advance'),
 				ref('hr_rule_fsp'),
 				ref('hr_rule_descuentos'),
 				ref('hr_rule_retefuente'),
